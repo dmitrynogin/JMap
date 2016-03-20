@@ -10,16 +10,16 @@ namespace JsonQuery
 {
     public static class OptionalScalarCoercion
     {
-        public static JObject Try<T>(this JObject jObject, Expression<Func<string, T>> mapping) =>
-            jObject.Try<string, T>(mapping);
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<string, T>> mapping) =>
+            jObject.Optional<string, T>(mapping);
 
-        public static JObject Try<T>(this JObject jObject, Expression<Func<int, T>> mapping) =>
-            jObject.Try<int, T>(mapping);
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<int, T>> mapping) =>
+            jObject.Optional<int, T>(mapping);
 
-        public static JObject Try<T>(this JObject jObject, Expression<Func<JObject, T>> mapping) =>
-            jObject.Try<JObject, T>(mapping);
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<JObject, T>> mapping) =>
+            jObject.Optional<JObject, T>(mapping);
 
-        static JObject Try<TSource, TTarget>(this JObject jObject, Mapping<TSource, TTarget> mapping)
+        static JObject Optional<TSource, TTarget>(this JObject jObject, Mapping<TSource, TTarget> mapping)
         {
             jObject.TryCoerce(mapping);
             return jObject;

@@ -10,16 +10,16 @@ namespace JsonQuery
 {
     public static class OptionalArrayConversion
     {
-        public static JObject Try<T>(this JObject jObject, Expression<Func<string[], IList<T>>> mapping, Func<string, T> conversion) =>
-            jObject.Try<string, T>(mapping, conversion);
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<string[], IList<T>>> mapping, Func<string, T> conversion) =>
+            jObject.Optional<string, T>(mapping, conversion);
 
-        public static JObject Try<T>(this JObject jObject, Expression<Func<int[], IList<T>>> mapping, Func<int, T> conversion) =>
-            jObject.Try<int, T>(mapping, conversion);
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<int[], IList<T>>> mapping, Func<int, T> conversion) =>
+            jObject.Optional<int, T>(mapping, conversion);
 
-        public static JObject Try<T>(this JObject jObject, Expression<Func<JObject[], IList<T>>> mapping, Func<JObject, T> conversion) =>
-            jObject.Try<JObject, T>(mapping, conversion);
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<JObject[], IList<T>>> mapping, Func<JObject, T> conversion) =>
+            jObject.Optional<JObject, T>(mapping, conversion);
         
-        static JObject Try<TSource, TTarget>(this JObject jObject, Mapping<TSource[], IList<TTarget>> mapping, Func<TSource, TTarget> conversion)
+        static JObject Optional<TSource, TTarget>(this JObject jObject, Mapping<TSource[], IList<TTarget>> mapping, Func<TSource, TTarget> conversion)
         {
             jObject.TryConvert(mapping, conversion);
             return jObject;

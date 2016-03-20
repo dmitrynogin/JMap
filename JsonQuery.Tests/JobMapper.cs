@@ -19,16 +19,16 @@ namespace JsonQuery.Tests
         public void Copy(JObject job, DtoJob dtoJob)
         {            
             job
-                .Try((string title) => dtoJob.Title)
-                .Try((JObject company) => dtoJob.Company, (company, dtoCompany) => company
-                    .Try((string name) => dtoCompany.Name)
-                    .Try((int size) => dtoCompany.Size)
-                    .Try((JObject[] industries) => dtoCompany.Industries, industry => 
+                .Optional((string title) => dtoJob.Title)
+                .Optional((JObject company) => dtoJob.Company, (company, dtoCompany) => company
+                    .Optional((string name) => dtoCompany.Name)
+                    .Optional((int size) => dtoCompany.Size)
+                    .Optional((JObject[] industries) => dtoCompany.Industries, industry => 
                         IndustryReader.ReadIndustry(industry.Id())))
-                .Try((string[] types) => dtoJob.Types)
-                .Try((JObject[] locations) => dtoJob.Locations, (location, dtoLocation) => location
-                    .Require((string city) => dtoLocation.City)
-                    .Require((string country) => dtoLocation.Country));
+                .Optional((string[] types) => dtoJob.Types)
+                .Optional((JObject[] locations) => dtoJob.Locations, (location, dtoLocation) => location
+                    .Required((string city) => dtoLocation.City)
+                    .Required((string country) => dtoLocation.Country));
         }
     }
 }

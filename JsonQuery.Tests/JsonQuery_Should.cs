@@ -24,7 +24,7 @@ namespace JsonQuery.Tests
         public void Copy_Scalar()
         {            
             var dtoJob = new DtoJob { Title = "Empty" };
-            Job.Try((string title) => dtoJob.Title);
+            Job.Optional((string title) => dtoJob.Title);
             Assert.AreEqual("tester", dtoJob.Title);            
         }
 
@@ -33,14 +33,14 @@ namespace JsonQuery.Tests
         public void Throw_On_Type_Mistmatch()
         {
             var dtoJob = new DtoJob { Title = "Empty" };
-            Job.Try((int title) => dtoJob.Title);
+            Job.Optional((int title) => dtoJob.Title);
         }
 
         [TestMethod]        
         public void Skip_If_No_Data()
         {
             var dtoJob = new DtoJob { Title = "Empty" };
-            Job.Try((int nonExistingField) => dtoJob.Title);
+            Job.Optional((int nonExistingField) => dtoJob.Title);
             Assert.AreEqual("Empty", dtoJob.Title);
         }
 
@@ -49,14 +49,14 @@ namespace JsonQuery.Tests
         public void Throw_On_Missing_Required_Field()
         {
             var dtoJob = new DtoJob { Title = "Empty" };
-            Job.Require((string nonExistingField) => dtoJob.Title);
+            Job.Required((string nonExistingField) => dtoJob.Title);
         }
 
         [TestMethod]
         public void Copy_Array()
         {
             var dtoJob = new DtoJob { Types = new[] { "Remote" } };
-            Job.Try((string[] types) => dtoJob.Types);
+            Job.Optional((string[] types) => dtoJob.Types);
             CollectionAssert.AreEqual(new[] { "Full-Time", "Part-Time" }, dtoJob.Types.ToList());            
         }
     }
