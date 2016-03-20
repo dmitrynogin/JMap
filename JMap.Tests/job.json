@@ -1,0 +1,19 @@
+﻿{
+  "id": 123,
+  "title": "tester",
+  "company": {
+    "name": "Microsoft",
+    "size": 50000,
+    "industries": [
+      { "id": 1 },
+      { "id": 2 }
+    ]
+  },
+  "types": [ "Full-Time", "Part-Time" ],
+  "locations": [
+    {
+      "city": "Vancouver",
+      "country": "Canada"
+    }
+  ]
+}
