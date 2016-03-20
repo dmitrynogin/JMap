@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace JMap
 {
-    public static class OptionalArrayConversion
+    public static class OptionalArrayConversions
     {
         public static JObject Optional<T>(this JObject jObject, Expression<Func<string[], IList<T>>> mapping, Func<string, T> conversion) =>
             jObject.Optional<string, T>(mapping, conversion);

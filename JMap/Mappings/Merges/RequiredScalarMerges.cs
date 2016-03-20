@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace JMap
 {
-    public static class RequiredScalarMerge
+    public static class RequiredScalarMerges
     {
         public static JObject Required<T>(this JObject jObject, Expression<Func<string, T>> mapping, Action<string, T> merge)
             where T : class =>

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace JMap
 {
-    public static class OptionalScalarConverion
+    public static class OptionalScalarConverions
     {
         public static JObject Optional<T>(this JObject jObject, Expression<Func<string, T>> mapping, Func<string, T> conversion) =>
             jObject.Optional<string, T>(mapping, conversion);

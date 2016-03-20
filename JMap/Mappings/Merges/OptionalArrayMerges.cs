@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace JMap
 {
-    public static class OptionalArrayMerge
+    public static class OptionalArrayMerges
     {
         public static JObject Optional<T>(this JObject jObject, Expression<Func<string[], IList<T>>> mapping, Action<string, T> merge)
             where T : class, new() =>

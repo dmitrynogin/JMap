@@ -44,29 +44,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Coercions\Coercion.cs" />
-    <Compile Include="Coercions\OptionalArrayCoercion.cs" />
-    <Compile Include="Coercions\OptionalScalarCoercion.cs" />
-    <Compile Include="Coercions\RequiredArrayCoercion.cs" />
-    <Compile Include="Coercions\RequiredScalarCoercion.cs" />
-    <Compile Include="Conversions\Conversion.cs" />
-    <Compile Include="Conversions\OptionalArrayConversion.cs" />
-    <Compile Include="Conversions\OptionalScalarConverion.cs" />
-    <Compile Include="Conversions\RequiredArrayConversion.cs" />
-    <Compile Include="Conversions\RequiredScalarConversion.cs" />
-    <Compile Include="Mapping.cs" />
-    <Compile Include="Merges\Merge.cs" />
-    <Compile Include="Merges\OptionalArrayMerge.cs" />
-    <Compile Include="Merges\OptionalScalarMerge.cs" />
-    <Compile Include="Merges\RequiredArrayMerge.cs" />
-    <Compile Include="Merges\RequiredScalarMerge.cs" />
-    <Compile Include="MissingFieldException.cs" />
+    <Compile Include="Exceptions\ValueMistmatchException.cs" />
+    <Compile Include="Validations\Assert.cs" />
+    <Compile Include="Mappings\Coercions\Coercion.cs" />
+    <Compile Include="Mappings\Coercions\OptionalArrayCoercions.cs" />
+    <Compile Include="Mappings\Coercions\OptionalScalarCoercions.cs" />
+    <Compile Include="Mappings\Coercions\RequiredArrayCoercions.cs" />
+    <Compile Include="Mappings\Coercions\RequiredScalarCoercions.cs" />
+    <Compile Include="Mappings\Conversions\Conversion.cs" />
+    <Compile Include="Mappings\Conversions\OptionalArrayConversions.cs" />
+    <Compile Include="Mappings\Conversions\OptionalScalarConverions.cs" />
+    <Compile Include="Mappings\Conversions\RequiredArrayConversions.cs" />
+    <Compile Include="Mappings\Conversions\RequiredScalarConversions.cs" />
+    <Compile Include="Mappings\Mapping.cs" />
+    <Compile Include="Mappings\Merges\Merge.cs" />
+    <Compile Include="Mappings\Merges\OptionalArrayMerges.cs" />
+    <Compile Include="Mappings\Merges\OptionalScalarMerges.cs" />
+    <Compile Include="Mappings\Merges\RequiredArrayMerges.cs" />
+    <Compile Include="Mappings\Merges\RequiredScalarMerges.cs" />
+    <Compile Include="Exceptions\MissingFieldException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shortcuts.cs" />
+    <Compile Include="Validations\OptionalAsserts.cs" />
+    <Compile Include="Validations\RequiredAsserts.cs" />
+    <Compile Include="Validations\Validation.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

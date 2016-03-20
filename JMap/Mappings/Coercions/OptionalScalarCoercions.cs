@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace JMap
 {
-    public static class OptionalScalarCoercion
+    public static class OptionalScalarCoercions
     {
         public static JObject Optional<T>(this JObject jObject, Expression<Func<string, T>> mapping) =>
             jObject.Optional<string, T>(mapping);

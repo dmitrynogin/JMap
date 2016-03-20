@@ -19,6 +19,7 @@ namespace JMap.Tests
         public void Copy(JObject job, DtoJob dtoJob)
         {            
             job
+                .RequiredAssert((int id) => id == dtoJob.Id)
                 .Optional((string title) => dtoJob.Title)
                 .Optional((JObject company) => dtoJob.Company, (company, dtoCompany) => company
                     .Optional((string name) => dtoCompany.Name)
