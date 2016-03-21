@@ -15,7 +15,40 @@ namespace JMap
 
         public static JObject Optional<T>(this JObject jObject, Expression<Func<int[], IList<T>>> mapping) =>
             jObject.Optional<int, T>(mapping);
-        
+
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<long[], IList<T>>> mapping) =>
+            jObject.Optional<long, T>(mapping);
+
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<float[], IList<T>>> mapping) =>
+            jObject.Optional<float, T>(mapping);
+
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<double[], IList<T>>> mapping) =>
+            jObject.Optional<double, T>(mapping);
+
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<bool[], IList<T>>> mapping) =>
+            jObject.Optional<bool, T>(mapping);
+
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<DateTime[], IList<T>>> mapping) =>
+            jObject.Optional<DateTime, T>(mapping);
+
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<int?[], IList<T>>> mapping) =>
+            jObject.Optional<int?, T>(mapping);
+
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<long?[], IList<T>>> mapping) =>
+            jObject.Optional<long?, T>(mapping);
+
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<float?[], IList<T>>> mapping) =>
+            jObject.Optional<float?, T>(mapping);
+
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<double?[], IList<T>>> mapping) =>
+            jObject.Optional<double?, T>(mapping);
+
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<bool?[], IList<T>>> mapping) =>
+            jObject.Optional<bool?, T>(mapping);
+
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<DateTime?[], IList<T>>> mapping) =>
+            jObject.Optional<DateTime?, T>(mapping);
+
         public static JObject Optional<T>(this JObject jObject, Expression<Func<JObject[], IList<T>>> mapping) =>
             jObject.Optional<JObject, T>(mapping);
 

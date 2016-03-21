@@ -16,6 +16,39 @@ namespace JMap
         public static JObject Optional<T>(this JObject jObject, Expression<Func<int, T>> mapping, Func<int, T> conversion) =>
             jObject.Optional<int, T>(mapping, conversion);
 
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<long, T>> mapping, Func<long, T> conversion) =>
+            jObject.Optional<long, T>(mapping, conversion);
+
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<float, T>> mapping, Func<float, T> conversion) =>
+            jObject.Optional<float, T>(mapping, conversion);
+
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<double, T>> mapping, Func<double, T> conversion) =>
+            jObject.Optional<double, T>(mapping, conversion);
+
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<bool, T>> mapping, Func<bool, T> conversion) =>
+            jObject.Optional<bool, T>(mapping, conversion);
+
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<DateTime, T>> mapping, Func<DateTime, T> conversion) =>
+            jObject.Optional<DateTime, T>(mapping, conversion);
+
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<int?, T>> mapping, Func<int?, T> conversion) =>
+            jObject.Optional<int?, T>(mapping, conversion);
+
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<long?, T>> mapping, Func<long?, T> conversion) =>
+            jObject.Optional<long?, T>(mapping, conversion);
+
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<float?, T>> mapping, Func<float?, T> conversion) =>
+            jObject.Optional<float?, T>(mapping, conversion);
+
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<double?, T>> mapping, Func<double?, T> conversion) =>
+            jObject.Optional<double?, T>(mapping, conversion);
+
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<bool?, T>> mapping, Func<bool?, T> conversion) =>
+            jObject.Optional<bool?, T>(mapping, conversion);
+
+        public static JObject Optional<T>(this JObject jObject, Expression<Func<DateTime?, T>> mapping, Func<DateTime?, T> conversion) =>
+            jObject.Optional<DateTime?, T>(mapping, conversion);
+
         public static JObject Optional<T>(this JObject jObject, Expression<Func<JObject, T>> mapping, Func<JObject, T> conversion) =>
             jObject.Optional<JObject, T>(mapping, conversion);
 

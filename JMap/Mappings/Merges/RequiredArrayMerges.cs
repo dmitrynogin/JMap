@@ -17,7 +17,51 @@ namespace JMap
         public static JObject Required<T>(this JObject jObject, Expression<Func<int[], IList<T>>> mapping, Action<int, T> merge)
             where T : class, new() =>
             jObject.Required<int, T>(mapping, merge);
-        
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<long[], IList<T>>> mapping, Action<long, T> merge)
+            where T : class, new() =>
+            jObject.Required<long, T>(mapping, merge);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<float[], IList<T>>> mapping, Action<float, T> merge)
+            where T : class, new() =>
+            jObject.Required<float, T>(mapping, merge);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<double[], IList<T>>> mapping, Action<double, T> merge)
+            where T : class, new() =>
+            jObject.Required<double, T>(mapping, merge);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<bool[], IList<T>>> mapping, Action<bool, T> merge)
+            where T : class, new() =>
+            jObject.Required<bool, T>(mapping, merge);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<DateTime[], IList<T>>> mapping, Action<DateTime, T> merge)
+            where T : class, new() =>
+            jObject.Required<DateTime, T>(mapping, merge);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<int?[], IList<T>>> mapping, Action<int?, T> merge)
+            where T : class, new() =>
+            jObject.Required<int?, T>(mapping, merge);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<long?[], IList<T>>> mapping, Action<long?, T> merge)
+            where T : class, new() =>
+            jObject.Required<long?, T>(mapping, merge);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<float?[], IList<T>>> mapping, Action<float?, T> merge)
+            where T : class, new() =>
+            jObject.Required<float?, T>(mapping, merge);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<double?[], IList<T>>> mapping, Action<double?, T> merge)
+            where T : class, new() =>
+            jObject.Required<double?, T>(mapping, merge);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<bool?[], IList<T>>> mapping, Action<bool?, T> merge)
+            where T : class, new() =>
+            jObject.Required<bool?, T>(mapping, merge);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<DateTime?[], IList<T>>> mapping, Action<DateTime?, T> merge)
+            where T : class, new() =>
+            jObject.Required<DateTime?, T>(mapping, merge);
+
         public static JObject Required<T>(this JObject jObject, Expression<Func<JObject[], IList<T>>> mapping, Action<JObject, T> merge)
             where T : class, new() =>
             jObject.Required<JObject, T>(mapping, merge);

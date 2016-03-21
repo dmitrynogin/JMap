@@ -16,6 +16,39 @@ namespace JMap
         public static JObject Required<T>(this JObject jObject, Expression<Func<int, T>> mapping, Func<int, T> conversion) =>
             jObject.Required<int, T>(mapping, conversion);
 
+        public static JObject Required<T>(this JObject jObject, Expression<Func<long, T>> mapping, Func<long, T> conversion) =>
+            jObject.Required<long, T>(mapping, conversion);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<float, T>> mapping, Func<float, T> conversion) =>
+            jObject.Required<float, T>(mapping, conversion);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<double, T>> mapping, Func<double, T> conversion) =>
+            jObject.Required<double, T>(mapping, conversion);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<bool, T>> mapping, Func<bool, T> conversion) =>
+            jObject.Required<bool, T>(mapping, conversion);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<DateTime, T>> mapping, Func<DateTime, T> conversion) =>
+            jObject.Required<DateTime, T>(mapping, conversion);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<int?, T>> mapping, Func<int?, T> conversion) =>
+            jObject.Required<int?, T>(mapping, conversion);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<long?, T>> mapping, Func<long?, T> conversion) =>
+            jObject.Required<long?, T>(mapping, conversion);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<float?, T>> mapping, Func<float?, T> conversion) =>
+            jObject.Required<float?, T>(mapping, conversion);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<double?, T>> mapping, Func<double?, T> conversion) =>
+            jObject.Required<double?, T>(mapping, conversion);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<bool?, T>> mapping, Func<bool?, T> conversion) =>
+            jObject.Required<bool?, T>(mapping, conversion);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<DateTime?, T>> mapping, Func<DateTime?, T> conversion) =>
+            jObject.Required<DateTime?, T>(mapping, conversion);
+
         public static JObject Required<T>(this JObject jObject, Expression<Func<JObject, T>> mapping, Func<JObject, T> conversion) =>
             jObject.Required<JObject, T>(mapping, conversion);
 

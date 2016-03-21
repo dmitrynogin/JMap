@@ -16,6 +16,39 @@ namespace JMap
         public static JObject Required<T>(this JObject jObject, Expression<Func<int, T>> mapping) =>
             jObject.Required<int, T>(mapping);
 
+        public static JObject Required<T>(this JObject jObject, Expression<Func<long, T>> mapping) =>
+            jObject.Required<long, T>(mapping);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<float, T>> mapping) =>
+            jObject.Required<float, T>(mapping);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<double, T>> mapping) =>
+            jObject.Required<double, T>(mapping);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<bool, T>> mapping) =>
+            jObject.Required<bool, T>(mapping);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<DateTime, T>> mapping) =>
+            jObject.Required<DateTime, T>(mapping);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<int?, T>> mapping) =>
+            jObject.Required<int?, T>(mapping);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<long?, T>> mapping) =>
+            jObject.Required<long?, T>(mapping);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<float?, T>> mapping) =>
+            jObject.Required<float?, T>(mapping);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<double?, T>> mapping) =>
+            jObject.Required<double?, T>(mapping);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<bool?, T>> mapping) =>
+            jObject.Required<bool?, T>(mapping);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<DateTime?, T>> mapping) =>
+            jObject.Required<DateTime?, T>(mapping);
+
         public static JObject Required<T>(this JObject jObject, Expression<Func<JObject, T>> mapping) =>
             jObject.Required<JObject, T>(mapping);
 

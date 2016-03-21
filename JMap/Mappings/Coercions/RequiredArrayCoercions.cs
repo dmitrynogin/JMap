@@ -16,6 +16,39 @@ namespace JMap
         public static JObject Required<T>(this JObject jObject, Expression<Func<int[], IList<T>>> mapping) =>
             jObject.Required<int, T>(mapping);
 
+        public static JObject Required<T>(this JObject jObject, Expression<Func<long[], IList<T>>> mapping) =>
+            jObject.Required<long, T>(mapping);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<float[], IList<T>>> mapping) =>
+            jObject.Required<float, T>(mapping);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<double[], IList<T>>> mapping) =>
+            jObject.Required<double, T>(mapping);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<bool[], IList<T>>> mapping) =>
+            jObject.Required<bool, T>(mapping);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<DateTime[], IList<T>>> mapping) =>
+            jObject.Required<DateTime, T>(mapping);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<int?[], IList<T>>> mapping) =>
+            jObject.Required<int?, T>(mapping);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<long?[], IList<T>>> mapping) =>
+            jObject.Required<long?, T>(mapping);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<float?[], IList<T>>> mapping) =>
+            jObject.Required<float?, T>(mapping);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<double?[], IList<T>>> mapping) =>
+            jObject.Required<double?, T>(mapping);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<bool?[], IList<T>>> mapping) =>
+            jObject.Required<bool?, T>(mapping);
+
+        public static JObject Required<T>(this JObject jObject, Expression<Func<DateTime?[], IList<T>>> mapping) =>
+            jObject.Required<DateTime?, T>(mapping);
+
         public static JObject Required<T>(this JObject jObject, Expression<Func<JObject[], IList<T>>> mapping) =>
             jObject.Required<JObject, T>(mapping);
 
