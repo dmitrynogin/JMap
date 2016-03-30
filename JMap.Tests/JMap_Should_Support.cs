@@ -74,6 +74,13 @@ namespace JMap.Tests
             Assert.AreEqual(new DateTime(2016, 03, 20, 22, 19, 01), values.DateTime);
         }
 
+        [TestMethod]
+        public void Url()
+        {
+            var values = new Values();
+            JObject.Required((string url) => values.Url);
+            Assert.AreEqual((Url)"http://www.microsoft.com", values.Url);
+        }
 
         [TestMethod]
         public void NullableBoolean()
@@ -128,6 +135,14 @@ namespace JMap.Tests
             JObject.Required((DateTime? nullValue) => values.DateTime);
             Assert.IsNull(values.DateTime);
         }
+
+        [TestMethod]
+        public void NullableUrl()
+        {
+            var values = new NullableValues();
+            JObject.Required((string nullValue) => values.Url);
+            Assert.IsNull(values.Url);
+        }
     }
 
     class Values
@@ -143,6 +158,8 @@ namespace JMap.Tests
         public decimal Decimal { get; set; }
 
         public DateTime DateTime { get; set; }
+
+        public Url Url { get; set; }
     }
 
     class NullableValues
@@ -158,5 +175,7 @@ namespace JMap.Tests
         public decimal? Decimal { get; set; } = 33m;
 
         public DateTime? DateTime { get; set; } = new DateTime(1999-12-31);
+
+        public Url? Url { get; set; } = (Url)"http://www.intel.com";
     }
 }

@@ -4,5 +4,6 @@
   "real": 123.123,
   "text": "Hello World",
   "dateTime": "2016-03-20T22:19:01",
-  "nullValue": null
+  "nullValue": null,
+  "url": "http://www.microsoft.com"
 }
