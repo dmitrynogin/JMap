@@ -21,126 +21,156 @@ namespace JMap.Tests
         JObject JObject { get; }
 
         [TestMethod]
-        public void Boolean()
+        public async Task Boolean()
         {
             var values = new Values();
-            JObject.Required((bool boolean) => values.Boolean);
+            await JObject.MapAsync()
+                .Required((bool boolean) => values.Boolean);
+
             Assert.AreEqual(true, values.Boolean);
         }
 
         [TestMethod]
-        public void Integer()
+        public async Task Integer()
         {
             var values = new Values();
-            JObject.Required((int integer) => values.Byte);
-            JObject.Required((int integer) => values.Int32);
-            JObject.Required((int integer) => values.Int64);
+            await JObject.MapAsync()
+                .Required((int integer) => values.Byte)
+                .Required((int integer) => values.Int32)
+                .Required((int integer) => values.Int64);
+
             Assert.AreEqual(123, values.Byte);
             Assert.AreEqual(123, values.Int32);
             Assert.AreEqual(123, values.Int64);
 
-            JObject.Required((long integer) => values.Byte);
-            JObject.Required((long integer) => values.Int32);
-            JObject.Required((long integer) => values.Int64);
+            await JObject.MapAsync()
+                .Required((long integer) => values.Byte)
+                .Required((long integer) => values.Int32)
+                .Required((long integer) => values.Int64);
+
             Assert.AreEqual(123, values.Byte);
             Assert.AreEqual(123, values.Int32);
             Assert.AreEqual(123, values.Int64);
         }
 
         [TestMethod]
-        public void Real()
+        public async Task Real()
         {
             var values = new Values();
-            JObject.Required((float real) => values.Float);
-            JObject.Required((float real) => values.Double);
-            JObject.Required((float real) => values.Decimal);
+            await JObject.MapAsync()
+                .Required((float real) => values.Float)
+                .Required((float real) => values.Double)
+                .Required((float real) => values.Decimal);
+
             Assert.AreEqual(123.123, values.Float, 0.0001);
             Assert.AreEqual(123.123, values.Double, 0.0001);
             Assert.AreEqual(123.123m, values.Decimal);
 
-            JObject.Required((double real) => values.Float);
-            JObject.Required((double real) => values.Double);
-            JObject.Required((double real) => values.Decimal);
+            await JObject.MapAsync()
+                .Required((double real) => values.Float)
+                .Required((double real) => values.Double)
+                .Required((double real) => values.Decimal);
+
             Assert.AreEqual(123.123, values.Float, 0.0001);
             Assert.AreEqual(123.123, values.Double, 0.0001);
             Assert.AreEqual(123.123m, values.Decimal);
         }
 
         [TestMethod]
-        public void DateTime()
+        public async Task DateTime()
         {
             var values = new Values();
-            JObject.Required((DateTime dateTime) => values.DateTime);
+            await JObject.MapAsync()
+                .Required((DateTime dateTime) => values.DateTime);
+
             Assert.AreEqual(new DateTime(2016, 03, 20, 22, 19, 01), values.DateTime);
         }
 
         [TestMethod]
-        public void Url()
+        public async Task Url()
         {
             var values = new Values();
-            JObject.Required((string url) => values.Url);
+            await JObject.MapAsync()
+                .Required((string url) => values.Url);
+
             Assert.AreEqual((Url)"http://www.microsoft.com", values.Url);
         }
 
         [TestMethod]
-        public void NullableBoolean()
+        public async Task NullableBoolean()
         {
             var values = new NullableValues();
-            JObject.Required((bool? nullValue) => values.Boolean);
+            await JObject.MapAsync()
+                .Required((bool? nullValue) => values.Boolean);
+
             Assert.IsNull(values.Boolean);
         }
 
         [TestMethod]
-        public void NullableInteger()
+        public async Task NullableInteger()
         {
             var values = new NullableValues();
-            JObject.Required((int? nullValue) => values.Byte);
-            JObject.Required((int? nullValue) => values.Int32);
-            JObject.Required((int? nullValue) => values.Int64);
+
+            await JObject.MapAsync()
+                .Required((int? nullValue) => values.Byte)
+                .Required((int? nullValue) => values.Int32)
+                .Required((int? nullValue) => values.Int64);
+
             Assert.IsNull(values.Byte);
             Assert.IsNull(values.Int32);
             Assert.IsNull(values.Int64);
 
-            JObject.Required((long? nullValue) => values.Byte);
-            JObject.Required((long? nullValue) => values.Int32);
-            JObject.Required((long? nullValue) => values.Int64);
+            await JObject.MapAsync()
+                .Required((long? nullValue) => values.Byte)
+                .Required((long? nullValue) => values.Int32)
+                .Required((long? nullValue) => values.Int64);
+
             Assert.IsNull(values.Byte);
             Assert.IsNull(values.Int32);
             Assert.IsNull(values.Int64);
         }
 
         [TestMethod]
-        public void NullableReal()
+        public async Task NullableReal()
         {
             var values = new NullableValues();
-            JObject.Required((float? nullValue) => values.Float);
-            JObject.Required((float? nullValue) => values.Double);
-            JObject.Required((float? nullValue) => values.Decimal);
+
+            await JObject.MapAsync()
+                .Required((float? nullValue) => values.Float)
+                .Required((float? nullValue) => values.Double)
+                .Required((float? nullValue) => values.Decimal);
+
             Assert.IsNull(values.Float);
             Assert.IsNull(values.Double);
             Assert.IsNull(values.Decimal);
 
-            JObject.Required((double? nullValue) => values.Float);
-            JObject.Required((double? nullValue) => values.Double);
-            JObject.Required((double? nullValue) => values.Decimal);
+            await JObject.MapAsync()
+                .Required((double? nullValue) => values.Float)
+                .Required((double? nullValue) => values.Double)
+                .Required((double? nullValue) => values.Decimal);
+
             Assert.IsNull(values.Float);
             Assert.IsNull(values.Double);
             Assert.IsNull(values.Decimal);
         }
 
         [TestMethod]
-        public void NullableDateTime()
+        public async Task NullableDateTime()
         {
             var values = new NullableValues();
-            JObject.Required((DateTime? nullValue) => values.DateTime);
+            await JObject.MapAsync()
+                .Required((DateTime? nullValue) => values.DateTime);
+
             Assert.IsNull(values.DateTime);
         }
 
         [TestMethod]
-        public void NullableUrl()
+        public async Task NullableUrl()
         {
             var values = new NullableValues();
-            JObject.Required((string nullValue) => values.Url);
+            await JObject.MapAsync()
+                .Required((string nullValue) => values.Url);
+
             Assert.IsNull(values.Url);
         }
     }

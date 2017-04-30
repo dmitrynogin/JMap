@@ -10,69 +10,69 @@ namespace JMap
 {
     public static class RequiredScalarMerges
     {
-        public static JObject Required<T>(this JObject jObject, Expression<Func<string, T>> mapping, Action<string, T> merge)
+        public static JTask Required<T>(this JTask jTask, Expression<Func<string, T>> mapping, Action<string, T> merge)
             where T : class =>
-            jObject.Required<string, T>(mapping, merge);
+            jTask.Required<string, T>(mapping, merge);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<int, T>> mapping, Action<int, T> merge)
+        public static JTask Required<T>(this JTask jTask, Expression<Func<int, T>> mapping, Action<int, T> merge)
             where T : class =>
-            jObject.Required<int, T>(mapping, merge);
+            jTask.Required<int, T>(mapping, merge);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<long, T>> mapping, Action<long, T> merge)
+        public static JTask Required<T>(this JTask jTask, Expression<Func<long, T>> mapping, Action<long, T> merge)
             where T : class =>
-            jObject.Required<long, T>(mapping, merge);
+            jTask.Required<long, T>(mapping, merge);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<float, T>> mapping, Action<float, T> merge)
+        public static JTask Required<T>(this JTask jTask, Expression<Func<float, T>> mapping, Action<float, T> merge)
             where T : class =>
-            jObject.Required<float, T>(mapping, merge);
+            jTask.Required<float, T>(mapping, merge);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<double, T>> mapping, Action<double, T> merge)
+        public static JTask Required<T>(this JTask jTask, Expression<Func<double, T>> mapping, Action<double, T> merge)
             where T : class =>
-            jObject.Required<double, T>(mapping, merge);
+            jTask.Required<double, T>(mapping, merge);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<bool, T>> mapping, Action<bool, T> merge)
+        public static JTask Required<T>(this JTask jTask, Expression<Func<bool, T>> mapping, Action<bool, T> merge)
             where T : class =>
-            jObject.Required<bool, T>(mapping, merge);
+            jTask.Required<bool, T>(mapping, merge);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<DateTime, T>> mapping, Action<DateTime, T> merge)
+        public static JTask Required<T>(this JTask jTask, Expression<Func<DateTime, T>> mapping, Action<DateTime, T> merge)
             where T : class =>
-            jObject.Required<DateTime, T>(mapping, merge);
+            jTask.Required<DateTime, T>(mapping, merge);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<int?, T>> mapping, Action<int?, T> merge)
+        public static JTask Required<T>(this JTask jTask, Expression<Func<int?, T>> mapping, Action<int?, T> merge)
             where T : class =>
-            jObject.Required<int?, T>(mapping, merge);
+            jTask.Required<int?, T>(mapping, merge);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<long?, T>> mapping, Action<long?, T> merge)
+        public static JTask Required<T>(this JTask jTask, Expression<Func<long?, T>> mapping, Action<long?, T> merge)
             where T : class =>
-            jObject.Required<long?, T>(mapping, merge);
+            jTask.Required<long?, T>(mapping, merge);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<float?, T>> mapping, Action<float?, T> merge)
+        public static JTask Required<T>(this JTask jTask, Expression<Func<float?, T>> mapping, Action<float?, T> merge)
             where T : class =>
-            jObject.Required<float?, T>(mapping, merge);
+            jTask.Required<float?, T>(mapping, merge);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<double?, T>> mapping, Action<double?, T> merge)
+        public static JTask Required<T>(this JTask jTask, Expression<Func<double?, T>> mapping, Action<double?, T> merge)
             where T : class =>
-            jObject.Required<double?, T>(mapping, merge);
+            jTask.Required<double?, T>(mapping, merge);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<bool?, T>> mapping, Action<bool?, T> merge)
+        public static JTask Required<T>(this JTask jTask, Expression<Func<bool?, T>> mapping, Action<bool?, T> merge)
             where T : class =>
-            jObject.Required<bool?, T>(mapping, merge);
+            jTask.Required<bool?, T>(mapping, merge);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<DateTime?, T>> mapping, Action<DateTime?, T> merge)
+        public static JTask Required<T>(this JTask jTask, Expression<Func<DateTime?, T>> mapping, Action<DateTime?, T> merge)
             where T : class =>
-            jObject.Required<DateTime?, T>(mapping, merge);
+            jTask.Required<DateTime?, T>(mapping, merge);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<JObject, T>> mapping, Action<JObject, T> merge)
-            where T : class =>
-            jObject.Required<JObject, T>(mapping, merge);
+        //public static JTask Required<T>(this JTask jTask, Expression<Func<JObject, T>> mapping, Action<JObject, T> merge)
+        //    where T : class =>
+        //    jTask.Required<JObject, T>(mapping, merge);
 
-        static JObject Required<TSource, TTarget>(this JObject jObject, Mapping<TSource, TTarget> mapping, Action<TSource, TTarget> merge)
+        static JTask Required<TSource, TTarget>(this JTask jTask, Mapping<TSource, TTarget> mapping, Action<TSource, TTarget> merge)
             where TTarget : class
         {
-            if (!jObject.TryMerge(mapping, merge))
+            if (!jTask.TryMerge(mapping, merge))
                 throw new MissingFieldException(mapping.Field);
 
-            return jObject;
+            return jTask;
         }
     }
 }

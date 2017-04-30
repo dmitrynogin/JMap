@@ -45,6 +45,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Exceptions\ValueMistmatchException.cs" />
+    <Compile Include="Mappings\Conversions\AsyncOptionalArrayConversions.cs" />
+    <Compile Include="Mappings\Conversions\AsyncOptionalScalarConverions.cs" />
+    <Compile Include="Mappings\Conversions\AsyncRequiredArrayConversions.cs" />
+    <Compile Include="Mappings\Conversions\AsyncRequiredScalarConversions.cs" />
+    <Compile Include="Mappings\JTask.cs" />
+    <Compile Include="Mappings\Merges\AsyncOptionalArrayMerges.cs" />
+    <Compile Include="Mappings\Merges\AsyncOptionalScalarMerges.cs" />
+    <Compile Include="Mappings\Merges\AsyncRequiredArrayMerges.cs" />
+    <Compile Include="Mappings\Merges\AsyncRequiredScalarMerges.cs" />
     <Compile Include="Validations\Assert.cs" />
     <Compile Include="Mappings\Coercions\Coercion.cs" />
     <Compile Include="Mappings\Coercions\OptionalArrayCoercions.cs" />

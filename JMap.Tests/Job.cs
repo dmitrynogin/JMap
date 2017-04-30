@@ -31,6 +31,7 @@ namespace JMap.Tests
     public interface IIndustryReader
     {
         DtoIndustry ReadIndustry(int id);
+        Task<DtoIndustry> ReadIndustryAsync(int id);
     }
 
     public class DtoIndustry

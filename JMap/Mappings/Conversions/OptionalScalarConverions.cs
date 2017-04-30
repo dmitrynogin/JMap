@@ -10,52 +10,52 @@ namespace JMap
 {
     public static class OptionalScalarConverions
     {
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<string, T>> mapping, Func<string, T> conversion) =>
-            jObject.Optional<string, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<string, T>> mapping, Func<string, T> conversion) =>
+            jTask.Optional<string, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<int, T>> mapping, Func<int, T> conversion) =>
-            jObject.Optional<int, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<int, T>> mapping, Func<int, T> conversion) =>
+            jTask.Optional<int, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<long, T>> mapping, Func<long, T> conversion) =>
-            jObject.Optional<long, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<long, T>> mapping, Func<long, T> conversion) =>
+            jTask.Optional<long, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<float, T>> mapping, Func<float, T> conversion) =>
-            jObject.Optional<float, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<float, T>> mapping, Func<float, T> conversion) =>
+            jTask.Optional<float, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<double, T>> mapping, Func<double, T> conversion) =>
-            jObject.Optional<double, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<double, T>> mapping, Func<double, T> conversion) =>
+            jTask.Optional<double, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<bool, T>> mapping, Func<bool, T> conversion) =>
-            jObject.Optional<bool, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<bool, T>> mapping, Func<bool, T> conversion) =>
+            jTask.Optional<bool, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<DateTime, T>> mapping, Func<DateTime, T> conversion) =>
-            jObject.Optional<DateTime, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<DateTime, T>> mapping, Func<DateTime, T> conversion) =>
+            jTask.Optional<DateTime, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<int?, T>> mapping, Func<int?, T> conversion) =>
-            jObject.Optional<int?, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<int?, T>> mapping, Func<int?, T> conversion) =>
+            jTask.Optional<int?, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<long?, T>> mapping, Func<long?, T> conversion) =>
-            jObject.Optional<long?, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<long?, T>> mapping, Func<long?, T> conversion) =>
+            jTask.Optional<long?, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<float?, T>> mapping, Func<float?, T> conversion) =>
-            jObject.Optional<float?, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<float?, T>> mapping, Func<float?, T> conversion) =>
+            jTask.Optional<float?, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<double?, T>> mapping, Func<double?, T> conversion) =>
-            jObject.Optional<double?, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<double?, T>> mapping, Func<double?, T> conversion) =>
+            jTask.Optional<double?, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<bool?, T>> mapping, Func<bool?, T> conversion) =>
-            jObject.Optional<bool?, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<bool?, T>> mapping, Func<bool?, T> conversion) =>
+            jTask.Optional<bool?, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<DateTime?, T>> mapping, Func<DateTime?, T> conversion) =>
-            jObject.Optional<DateTime?, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<DateTime?, T>> mapping, Func<DateTime?, T> conversion) =>
+            jTask.Optional<DateTime?, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<JObject, T>> mapping, Func<JObject, T> conversion) =>
-            jObject.Optional<JObject, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<JObject, T>> mapping, Func<JObject, T> conversion) =>
+            jTask.Optional<JObject, T>(mapping, conversion);
 
-        static JObject Optional<TSource, TTarget>(this JObject jObject, Mapping<TSource, TTarget> mapping, Func<TSource, TTarget> conversion)
+        static JTask Optional<TSource, TTarget>(this JTask jTask, Mapping<TSource, TTarget> mapping, Func<TSource, TTarget> conversion)
         {
-            jObject.TryConvert(mapping, conversion);
-            return jObject;
+            jTask.TryConvert(mapping, conversion);
+            return jTask;
         }
     }
 }

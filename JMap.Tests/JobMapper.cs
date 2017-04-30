@@ -16,16 +16,16 @@ namespace JMap.Tests
 
         IIndustryReader IndustryReader { get; }
 
-        public void Copy(JObject job, DtoJob dtoJob)
+        public async Task CopyAsync(JObject job, DtoJob dtoJob)
         {            
-            job
+            await job.MapAsync()
                 .RequiredAssert((int id) => id == dtoJob.Id)
                 .Optional((string title) => dtoJob.Title)
                 .Optional((JObject company) => dtoJob.Company, (company, dtoCompany) => company
                     .Optional((string name) => dtoCompany.Name)
                     .Optional((int size) => dtoCompany.Size)
                     .Optional((JObject[] industries) => dtoCompany.Industries, industry => 
-                        IndustryReader.ReadIndustry(industry.Id())))
+                        IndustryReader.ReadIndustryAsync(industry.Id())))
                 .Optional((string[] types) => dtoJob.Types)
                 .Optional((JObject[] locations) => dtoJob.Locations, (location, dtoLocation) => location
                     .Required((string city) => dtoLocation.City)

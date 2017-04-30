@@ -32,5 +32,28 @@ namespace JMap
 
             return true;
         }
+
+        public static async Task<bool> TryConvertAsync<TSource, TTarget>(this JObject jObject, Mapping<TSource, TTarget> mapping, Func<TSource, Task<TTarget>> asyncConversion)
+        {
+            var token = jObject[mapping.Field];
+            if (token == null)
+                return false;
+
+            mapping[token.Value<TSource>()] = await asyncConversion(token.Value<TSource>());
+            return true;
+        }
+
+        public static async Task<bool> TryConvertAsync<TSource, TTarget>(this JObject jObject, Mapping<TSource[], IList<TTarget>> mapping, Func<TSource, Task<TTarget>> asyncConversion)
+        {
+            var token = jObject[mapping.Field];
+            if (token == null)
+                return false;
+
+            mapping[token.Values<TSource>().ToArray()] = await Task.WhenAll(
+                token.Values<TSource>()
+                    .Select(v => asyncConversion(v)));
+
+            return true;
+        }
     }
 }

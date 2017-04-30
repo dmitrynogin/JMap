@@ -10,52 +10,52 @@ namespace JMap
 {
     public static class OptionalArrayCoercions
     {
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<string[], IList<T>>> mapping) =>
-            jObject.Optional<string, T>(mapping);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<string[], IList<T>>> mapping) =>
+            jTask.Optional<string, T>(mapping);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<int[], IList<T>>> mapping) =>
-            jObject.Optional<int, T>(mapping);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<int[], IList<T>>> mapping) =>
+            jTask.Optional<int, T>(mapping);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<long[], IList<T>>> mapping) =>
-            jObject.Optional<long, T>(mapping);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<long[], IList<T>>> mapping) =>
+            jTask.Optional<long, T>(mapping);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<float[], IList<T>>> mapping) =>
-            jObject.Optional<float, T>(mapping);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<float[], IList<T>>> mapping) =>
+            jTask.Optional<float, T>(mapping);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<double[], IList<T>>> mapping) =>
-            jObject.Optional<double, T>(mapping);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<double[], IList<T>>> mapping) =>
+            jTask.Optional<double, T>(mapping);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<bool[], IList<T>>> mapping) =>
-            jObject.Optional<bool, T>(mapping);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<bool[], IList<T>>> mapping) =>
+            jTask.Optional<bool, T>(mapping);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<DateTime[], IList<T>>> mapping) =>
-            jObject.Optional<DateTime, T>(mapping);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<DateTime[], IList<T>>> mapping) =>
+            jTask.Optional<DateTime, T>(mapping);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<int?[], IList<T>>> mapping) =>
-            jObject.Optional<int?, T>(mapping);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<int?[], IList<T>>> mapping) =>
+            jTask.Optional<int?, T>(mapping);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<long?[], IList<T>>> mapping) =>
-            jObject.Optional<long?, T>(mapping);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<long?[], IList<T>>> mapping) =>
+            jTask.Optional<long?, T>(mapping);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<float?[], IList<T>>> mapping) =>
-            jObject.Optional<float?, T>(mapping);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<float?[], IList<T>>> mapping) =>
+            jTask.Optional<float?, T>(mapping);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<double?[], IList<T>>> mapping) =>
-            jObject.Optional<double?, T>(mapping);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<double?[], IList<T>>> mapping) =>
+            jTask.Optional<double?, T>(mapping);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<bool?[], IList<T>>> mapping) =>
-            jObject.Optional<bool?, T>(mapping);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<bool?[], IList<T>>> mapping) =>
+            jTask.Optional<bool?, T>(mapping);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<DateTime?[], IList<T>>> mapping) =>
-            jObject.Optional<DateTime?, T>(mapping);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<DateTime?[], IList<T>>> mapping) =>
+            jTask.Optional<DateTime?, T>(mapping);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<JObject[], IList<T>>> mapping) =>
-            jObject.Optional<JObject, T>(mapping);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<JObject[], IList<T>>> mapping) =>
+            jTask.Optional<JObject, T>(mapping);
 
-        static JObject Optional<TSource, TTarget>(this JObject jObject, Mapping<TSource[], IList<TTarget>> mapping)
+        static JTask Optional<TSource, TTarget>(this JTask jTask, Mapping<TSource[], IList<TTarget>> mapping)
         {
-            jObject.TryCoerce(mapping);
-            return jObject;
+            jTask.TryCoerce(mapping);
+            return jTask;
         }
     }
 }

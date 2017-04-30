@@ -10,54 +10,54 @@ namespace JMap
 {
     public static class RequiredScalarConversions
     {
-        public static JObject Required<T>(this JObject jObject, Expression<Func<string, T>> mapping, Func<string, T> conversion) =>
-            jObject.Required<string, T>(mapping, conversion);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<string, T>> mapping, Func<string, T> conversion) =>
+            jTask.Required<string, T>(mapping, conversion);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<int, T>> mapping, Func<int, T> conversion) =>
-            jObject.Required<int, T>(mapping, conversion);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<int, T>> mapping, Func<int, T> conversion) =>
+            jTask.Required<int, T>(mapping, conversion);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<long, T>> mapping, Func<long, T> conversion) =>
-            jObject.Required<long, T>(mapping, conversion);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<long, T>> mapping, Func<long, T> conversion) =>
+            jTask.Required<long, T>(mapping, conversion);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<float, T>> mapping, Func<float, T> conversion) =>
-            jObject.Required<float, T>(mapping, conversion);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<float, T>> mapping, Func<float, T> conversion) =>
+            jTask.Required<float, T>(mapping, conversion);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<double, T>> mapping, Func<double, T> conversion) =>
-            jObject.Required<double, T>(mapping, conversion);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<double, T>> mapping, Func<double, T> conversion) =>
+            jTask.Required<double, T>(mapping, conversion);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<bool, T>> mapping, Func<bool, T> conversion) =>
-            jObject.Required<bool, T>(mapping, conversion);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<bool, T>> mapping, Func<bool, T> conversion) =>
+            jTask.Required<bool, T>(mapping, conversion);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<DateTime, T>> mapping, Func<DateTime, T> conversion) =>
-            jObject.Required<DateTime, T>(mapping, conversion);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<DateTime, T>> mapping, Func<DateTime, T> conversion) =>
+            jTask.Required<DateTime, T>(mapping, conversion);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<int?, T>> mapping, Func<int?, T> conversion) =>
-            jObject.Required<int?, T>(mapping, conversion);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<int?, T>> mapping, Func<int?, T> conversion) =>
+            jTask.Required<int?, T>(mapping, conversion);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<long?, T>> mapping, Func<long?, T> conversion) =>
-            jObject.Required<long?, T>(mapping, conversion);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<long?, T>> mapping, Func<long?, T> conversion) =>
+            jTask.Required<long?, T>(mapping, conversion);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<float?, T>> mapping, Func<float?, T> conversion) =>
-            jObject.Required<float?, T>(mapping, conversion);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<float?, T>> mapping, Func<float?, T> conversion) =>
+            jTask.Required<float?, T>(mapping, conversion);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<double?, T>> mapping, Func<double?, T> conversion) =>
-            jObject.Required<double?, T>(mapping, conversion);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<double?, T>> mapping, Func<double?, T> conversion) =>
+            jTask.Required<double?, T>(mapping, conversion);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<bool?, T>> mapping, Func<bool?, T> conversion) =>
-            jObject.Required<bool?, T>(mapping, conversion);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<bool?, T>> mapping, Func<bool?, T> conversion) =>
+            jTask.Required<bool?, T>(mapping, conversion);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<DateTime?, T>> mapping, Func<DateTime?, T> conversion) =>
-            jObject.Required<DateTime?, T>(mapping, conversion);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<DateTime?, T>> mapping, Func<DateTime?, T> conversion) =>
+            jTask.Required<DateTime?, T>(mapping, conversion);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<JObject, T>> mapping, Func<JObject, T> conversion) =>
-            jObject.Required<JObject, T>(mapping, conversion);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<JObject, T>> mapping, Func<JObject, T> conversion) =>
+            jTask.Required<JObject, T>(mapping, conversion);
 
-        static JObject Required<TSource, TTarget>(this JObject jObject, Mapping<TSource, TTarget> mapping, Func<TSource, TTarget> conversion)
+        static JTask Required<TSource, TTarget>(this JTask jTask, Mapping<TSource, TTarget> mapping, Func<TSource, TTarget> conversion)
         {
-            if (!jObject.TryConvert(mapping, conversion))
+            if (!jTask.TryConvert(mapping, conversion))
                 throw new MissingFieldException(mapping.Field);
 
-            return jObject;
+            return jTask;
         }
     }
 }
