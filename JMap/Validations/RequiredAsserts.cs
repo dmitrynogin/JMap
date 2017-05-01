@@ -10,21 +10,21 @@ namespace JMap
 {
     public static class RequiredAsserts
     {
-        public static JObject RequiredAssert(this JObject jObject, Expression<Predicate<string>> assert) =>
-             jObject.RequiredAssert<string>(assert);
+        public static JTask RequiredAssert(this JTask jTask, Expression<Predicate<string>> assert) =>
+             jTask.RequiredAssert<string>(assert);
 
-        public static JObject RequiredAssert(this JObject jObject, Expression<Predicate<int>> assert) =>
-            jObject.RequiredAssert<int>(assert);
+        public static JTask RequiredAssert(this JTask jTask, Expression<Predicate<int>> assert) =>
+            jTask.RequiredAssert<int>(assert);
 
-        public static JObject RequiredAssert(this JObject jObject, Expression<Predicate<JObject>> assert) =>
-            jObject.RequiredAssert<JObject>(assert);
+        public static JTask RequiredAssert(this JTask jTask, Expression<Predicate<JObject>> assert) =>
+            jTask.RequiredAssert<JObject>(assert);
 
-        static JObject RequiredAssert<T>(this JObject jObject, Assert<T> assert)
+        static JTask RequiredAssert<T>(this JTask jTask, Assert<T> assert)
         {
-            if (!jObject.TryAssert(assert))
+            if (!jTask.TryAssert(assert))
                 throw new MissingFieldException(assert.Field);
 
-            return jObject;
+            return jTask;
         }
     }
 }

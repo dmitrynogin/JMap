@@ -10,54 +10,54 @@ namespace JMap
 {
     public static class RequiredScalarCoercions
     {
-        public static JObject Required<T>(this JObject jObject, Expression<Func<string, T>> mapping) =>
-            jObject.Required<string, T>(mapping);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<string, T>> mapping) =>
+            jTask.Required<string, T>(mapping);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<int, T>> mapping) =>
-            jObject.Required<int, T>(mapping);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<int, T>> mapping) =>
+            jTask.Required<int, T>(mapping);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<long, T>> mapping) =>
-            jObject.Required<long, T>(mapping);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<long, T>> mapping) =>
+            jTask.Required<long, T>(mapping);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<float, T>> mapping) =>
-            jObject.Required<float, T>(mapping);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<float, T>> mapping) =>
+            jTask.Required<float, T>(mapping);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<double, T>> mapping) =>
-            jObject.Required<double, T>(mapping);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<double, T>> mapping) =>
+            jTask.Required<double, T>(mapping);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<bool, T>> mapping) =>
-            jObject.Required<bool, T>(mapping);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<bool, T>> mapping) =>
+            jTask.Required<bool, T>(mapping);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<DateTime, T>> mapping) =>
-            jObject.Required<DateTime, T>(mapping);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<DateTime, T>> mapping) =>
+            jTask.Required<DateTime, T>(mapping);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<int?, T>> mapping) =>
-            jObject.Required<int?, T>(mapping);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<int?, T>> mapping) =>
+            jTask.Required<int?, T>(mapping);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<long?, T>> mapping) =>
-            jObject.Required<long?, T>(mapping);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<long?, T>> mapping) =>
+            jTask.Required<long?, T>(mapping);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<float?, T>> mapping) =>
-            jObject.Required<float?, T>(mapping);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<float?, T>> mapping) =>
+            jTask.Required<float?, T>(mapping);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<double?, T>> mapping) =>
-            jObject.Required<double?, T>(mapping);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<double?, T>> mapping) =>
+            jTask.Required<double?, T>(mapping);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<bool?, T>> mapping) =>
-            jObject.Required<bool?, T>(mapping);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<bool?, T>> mapping) =>
+            jTask.Required<bool?, T>(mapping);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<DateTime?, T>> mapping) =>
-            jObject.Required<DateTime?, T>(mapping);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<DateTime?, T>> mapping) =>
+            jTask.Required<DateTime?, T>(mapping);
 
-        public static JObject Required<T>(this JObject jObject, Expression<Func<JObject, T>> mapping) =>
-            jObject.Required<JObject, T>(mapping);
+        public static JTask Required<T>(this JTask jTask, Expression<Func<JObject, T>> mapping) =>
+            jTask.Required<JObject, T>(mapping);
 
-        static JObject Required<TSource, TTarget>(this JObject jObject, Mapping<TSource, TTarget> mapping)
+        static JTask Required<TSource, TTarget>(this JTask jTask, Mapping<TSource, TTarget> mapping)
         {
-            if (!jObject.TryCoerce(mapping))
+            if (!jTask.TryCoerce(mapping))
                 throw new MissingFieldException($"Required {mapping.Field} field not found in the JSON payload.");
 
-            return jObject;
+            return jTask;
         }
     }
 }

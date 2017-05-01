@@ -10,52 +10,52 @@ namespace JMap
 {
     public static class OptionalArrayConversions
     {
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<string[], IList<T>>> mapping, Func<string, T> conversion) =>
-            jObject.Optional<string, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<string[], IList<T>>> mapping, Func<string, T> conversion) =>
+            jTask.Optional<string, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<int[], IList<T>>> mapping, Func<int, T> conversion) =>
-            jObject.Optional<int, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<int[], IList<T>>> mapping, Func<int, T> conversion) =>
+            jTask.Optional<int, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<long[], IList<T>>> mapping, Func<long, T> conversion) =>
-            jObject.Optional<long, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<long[], IList<T>>> mapping, Func<long, T> conversion) =>
+            jTask.Optional<long, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<float[], IList<T>>> mapping, Func<float, T> conversion) =>
-            jObject.Optional<float, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<float[], IList<T>>> mapping, Func<float, T> conversion) =>
+            jTask.Optional<float, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<double[], IList<T>>> mapping, Func<double, T> conversion) =>
-            jObject.Optional<double, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<double[], IList<T>>> mapping, Func<double, T> conversion) =>
+            jTask.Optional<double, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<bool[], IList<T>>> mapping, Func<bool, T> conversion) =>
-            jObject.Optional<bool, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<bool[], IList<T>>> mapping, Func<bool, T> conversion) =>
+            jTask.Optional<bool, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<DateTime[], IList<T>>> mapping, Func<DateTime, T> conversion) =>
-            jObject.Optional<DateTime, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<DateTime[], IList<T>>> mapping, Func<DateTime, T> conversion) =>
+            jTask.Optional<DateTime, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<int?[], IList<T>>> mapping, Func<int?, T> conversion) =>
-            jObject.Optional<int?, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<int?[], IList<T>>> mapping, Func<int?, T> conversion) =>
+            jTask.Optional<int?, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<long?[], IList<T>>> mapping, Func<long?, T> conversion) =>
-            jObject.Optional<long?, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<long?[], IList<T>>> mapping, Func<long?, T> conversion) =>
+            jTask.Optional<long?, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<float?[], IList<T>>> mapping, Func<float?, T> conversion) =>
-            jObject.Optional<float?, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<float?[], IList<T>>> mapping, Func<float?, T> conversion) =>
+            jTask.Optional<float?, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<double?[], IList<T>>> mapping, Func<double?, T> conversion) =>
-            jObject.Optional<double?, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<double?[], IList<T>>> mapping, Func<double?, T> conversion) =>
+            jTask.Optional<double?, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<bool?[], IList<T>>> mapping, Func<bool?, T> conversion) =>
-            jObject.Optional<bool?, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<bool?[], IList<T>>> mapping, Func<bool?, T> conversion) =>
+            jTask.Optional<bool?, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<DateTime?[], IList<T>>> mapping, Func<DateTime?, T> conversion) =>
-            jObject.Optional<DateTime?, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<DateTime?[], IList<T>>> mapping, Func<DateTime?, T> conversion) =>
+            jTask.Optional<DateTime?, T>(mapping, conversion);
 
-        public static JObject Optional<T>(this JObject jObject, Expression<Func<JObject[], IList<T>>> mapping, Func<JObject, T> conversion) =>
-            jObject.Optional<JObject, T>(mapping, conversion);
+        public static JTask Optional<T>(this JTask jTask, Expression<Func<JObject[], IList<T>>> mapping, Func<JObject, T> conversion) =>
+            jTask.Optional<JObject, T>(mapping, conversion);
         
-        static JObject Optional<TSource, TTarget>(this JObject jObject, Mapping<TSource[], IList<TTarget>> mapping, Func<TSource, TTarget> conversion)
+        static JTask Optional<TSource, TTarget>(this JTask jTask, Mapping<TSource[], IList<TTarget>> mapping, Func<TSource, TTarget> conversion)
         {
-            jObject.TryConvert(mapping, conversion);
-            return jObject;
+            jTask.TryConvert(mapping, conversion);
+            return jTask;
         }
     }
 }

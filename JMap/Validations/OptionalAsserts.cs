@@ -10,19 +10,19 @@ namespace JMap
 {
     public static class OptionalAsserts
     {
-        public static JObject OptionalAssert(this JObject jObject, Expression<Predicate<string>> assert) =>
-             jObject.OptionalAssert<string>(assert);
+        public static JTask OptionalAssert(this JTask jTask, Expression<Predicate<string>> assert) =>
+             jTask.OptionalAssert<string>(assert);
 
-        public static JObject OptionalAssert(this JObject jObject, Expression<Predicate<int>> assert) =>
-            jObject.OptionalAssert<int>(assert);
+        public static JTask OptionalAssert(this JTask jTask, Expression<Predicate<int>> assert) =>
+            jTask.OptionalAssert<int>(assert);
 
-        public static JObject OptionalAssert(this JObject jObject, Expression<Predicate<JObject>> assert) =>
-            jObject.OptionalAssert<JObject>(assert);
+        public static JTask OptionalAssert(this JTask jTask, Expression<Predicate<JObject>> assert) =>
+            jTask.OptionalAssert<JObject>(assert);
 
-        static JObject OptionalAssert<T>(this JObject jObject, Assert<T> assert)
+        static JTask OptionalAssert<T>(this JTask jTask, Assert<T> assert)
         {
-            jObject.TryAssert(assert);
-            return jObject;
+            jTask.TryAssert(assert);
+            return jTask;
         }
     }
 }
